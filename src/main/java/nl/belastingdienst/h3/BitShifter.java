@@ -10,10 +10,31 @@ public class BitShifter {
          * 0100 >>> 1   =>  0010
          * Dus 2 :)
          */
-        System.out.printf("Result of shift is %s", j);
+        System.out.printf("\nResult of shift is %s", j);
     }
 
     public void bitSum(){
-        System.out.printf("Result of bit sum is %s",0b1010 + 0b100);
+        System.out.printf("\nResult of bit sum is %s",0b1010 + 0b100);
     }
+
+    public int calcTimeAfterHours(int startTime, int hours){
+        return (startTime + hours) % (int)24;
+    }
+
+    public void maxValues(){
+
+        System.out.printf("\nint maxvalue %s", Integer.MAX_VALUE);
+        System.out.printf("\nint minvalue %s", Integer.MIN_VALUE);
+
+        System.out.printf("\nlong maxvalue %s", Long.MAX_VALUE);
+        System.out.printf("\nlong minvalue %s", Long.MIN_VALUE);
+
+        System.out.printf("\nbyte maxvalue %s", Byte.MAX_VALUE);
+        System.out.printf("\nbyte minvalue %s" , Byte.MIN_VALUE);
+
+        System.out.printf("\nfloat maxvalue %s", Float.MAX_VALUE);
+        System.out.printf("\nfloat minvalue %s", Float.MIN_VALUE);
+
+    }
+
 }

@@ -16,5 +16,16 @@ public class BitShifterTest {
         bs.bitSum();
     }
 
+    @Test
+    public void whenHoursAddedToStartTime(){
+        BitShifter bs = new BitShifter();
+        System.out.printf("\nNew time is %s o'clock",bs.calcTimeAfterHours(23, 80));
+    }
+
+    @Test
+    public void whenMaxValues(){
+        BitShifter bs = new BitShifter();
+        bs.maxValues();
+    }
 
 }
