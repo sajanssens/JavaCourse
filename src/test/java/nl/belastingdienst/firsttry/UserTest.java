@@ -1,4 +1,4 @@
-package nl.belastingdienst;
+package nl.belastingdienst.firsttry;
 
 import org.junit.Test;
 

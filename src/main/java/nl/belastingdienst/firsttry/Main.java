@@ -1,4 +1,4 @@
-package nl.belastingdienst;
+package nl.belastingdienst.firsttry;
 
 public class Main {
     public static void main(String[] args){
