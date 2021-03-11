@@ -10,4 +10,11 @@ public class BitShifterTest {
         bs.shift();
     }
 
+    @Test
+    public void sum(){
+        BitShifter bs = new BitShifter();
+        bs.bitSum();
+    }
+
+
 }

@@ -10,6 +10,10 @@ public class BitShifter {
          * 0100 >>> 1   =>  0010
          * Dus 2 :)
          */
-        System.out.println(j);
+        System.out.printf("Result of shift is %s", j);
+    }
+
+    public void bitSum(){
+        System.out.printf("Result of bit sum is %s",0b1010 + 0b100);
     }
 }
