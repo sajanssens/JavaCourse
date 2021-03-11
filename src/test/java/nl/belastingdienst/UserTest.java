@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Zit deze wijziging nu ook in GIT?
+ */
 public class UserTest  {
 
 
