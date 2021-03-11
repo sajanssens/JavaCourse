@@ -29,6 +29,9 @@ public class BitShifter {
         System.out.printf("\nlong maxvalue %s", Long.MAX_VALUE);
         System.out.printf("\nlong minvalue %s", Long.MIN_VALUE);
 
+        System.out.printf("\nshort maxvalue %s", Short.MAX_VALUE);
+        System.out.printf("\nshort minvalue %s", Short.MIN_VALUE);
+
         System.out.printf("\nbyte maxvalue %s", Byte.MAX_VALUE);
         System.out.printf("\nbyte minvalue %s" , Byte.MIN_VALUE);
 
