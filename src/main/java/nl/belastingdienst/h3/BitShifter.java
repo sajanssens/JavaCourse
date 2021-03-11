@@ -4,7 +4,7 @@ public class BitShifter {
     public void shift(){
         int i = 3;
         int j = i < 3 ? i++ + ++i : ++i >>> 1;
-        /**
+        /*
          * i !< 3 dus 2e deel uitvoeren ++i >>>1
          * ++i hoogt op voorafgaand bewerking dus 4 >>> 1
          * 0100 >>> 1   =>  0010
@@ -18,16 +18,20 @@ public class BitShifter {
     }
 
     public int calcTimeAfterHours(int startTime, int hours){
-        return (startTime + hours) % (int)24;
+        return (startTime + hours) % 24;
     }
 
     public void maxValues(){
 
+        /* cheating? */
         System.out.printf("\nint maxvalue %s", Integer.MAX_VALUE);
         System.out.printf("\nint minvalue %s", Integer.MIN_VALUE);
 
         System.out.printf("\nlong maxvalue %s", Long.MAX_VALUE);
         System.out.printf("\nlong minvalue %s", Long.MIN_VALUE);
+
+        System.out.printf("\ndouble maxvalue %s", Double.MAX_VALUE);
+        System.out.printf("\ndouble minvalue %s", Double.MIN_VALUE);
 
         System.out.printf("\nshort maxvalue %s", Short.MAX_VALUE);
         System.out.printf("\nshort minvalue %s", Short.MIN_VALUE);
@@ -37,6 +41,9 @@ public class BitShifter {
 
         System.out.printf("\nfloat maxvalue %s", Float.MAX_VALUE);
         System.out.printf("\nfloat minvalue %s", Float.MIN_VALUE);
+
+        System.out.printf("\nchar maxvalue %s", 0b0000000000000000);
+        System.out.printf("\nchar minvalue %s", 0b1111111111111111);
 
     }
 
