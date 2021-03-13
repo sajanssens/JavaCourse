@@ -6,28 +6,6 @@ public class Account {
     // todo use enum for status
     private int state = -1;
 
-    /**
-     * Do eleven proof on account number
-     *
-     * @return true if compliant
-     */
-    private boolean elevenProof(){
-        int i, digit;
-        int checkNo = 0;
-        int multiplier = this.accountNo.length();
-
-        for( i = 0 ; i<this.accountNo.length(); i++){
-            digit = Integer.parseInt(this.accountNo.substring(i,i+1));
-            System.out.printf("\nDigit: %s", digit);
-            checkNo += digit * multiplier;
-            multiplier--;
-        }
-
-        System.out.printf("\nTotal: %s",checkNo);
-
-        return checkNo%11 == 0;
-    }
-
     public boolean validate() {
 
         // reset to 'not validated yet'
@@ -50,13 +28,17 @@ public class Account {
         }
 
         // does it pass 11-proof?
-        if(!this.elevenProof()){
+        ElevenProof ep = new ElevenProof(this.accountNo);
+        if(ep.execute()){
+            this.state = 0;
+            return true;
+        }
+        else{
             this.state = 2;
             return false;
         }
 
-        this.state = 0;
-        return true;
+
     }
 
     public int getState(){
