@@ -20,6 +20,6 @@ public class ClientTest {
         // c1 name should be Joris
         System.out.printf("Client 1 name is %s", c1.getName());
 
-        assertTrue(c1.getName == "Joris");
+        assertTrue(c1.getName() == "Joris");
     }
 }
