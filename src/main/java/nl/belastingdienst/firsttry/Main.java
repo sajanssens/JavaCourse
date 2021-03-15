@@ -13,6 +13,8 @@ public class Main {
 
         u1.introduce();
         u2.introduce();
+        
+        System.out.println('1' + '2' + "");
 
     }
 }
