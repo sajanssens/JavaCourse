@@ -3,6 +3,7 @@ package nl.belastingdienst.h7;
 import org.junit.Test;
 
 public class PersonTest {
+
     @Test
     public void testPerson() throws PersonDiedException {
         Person p = new Person("Jan", 45);
