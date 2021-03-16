@@ -1,8 +1,55 @@
 package nl.belastingdienst.h7bank;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class AccountTest {
+
+    @Test
+    public void whenDepositBalanceIncreases(){
+        Account acc = new Account("123456", 100f, 3f);
+        acc.deposit(100);
+        Assert.assertTrue(acc.getBalance() == 200  );
+    }
+
+    @Test
+    public void whenWithDrawBalanceDecreases(){
+        Account acc = new Account("123456", 100f, 3f);
+        acc.withdraw(30);
+        Assert.assertTrue(acc.getBalance() == 70 );
+    }
+
+    @Test
+    public void whenCalcInterest(){
+        Account acc = new Account("123456", 100f, 3f);
+        float interest = acc.calcInterest();
+        Assert.assertTrue(interest == 3f );
+    }
+
+    @Test
+    public void whenGetInterestRate(){
+        Account acc = new Account("123456", 100f, 3f);
+        float interestRate = acc.getInterestRate();
+        Assert.assertTrue(interestRate == 3f );
+    }
+
+    @Test
+    public void whenSetInterestRate(){
+        Account acc = new Account("123456", 100f, 3f);
+        acc.setInterestRate(4f);
+        Assert.assertTrue(acc.getInterestRate() == 4f );
+    }
+
+    @Test
+    public void whenGetBalance(){
+        Account acc = new Account("123456", 100f, 3f);
+        float interestRate = acc.getInterestRate();
+        Assert.assertTrue(interestRate == 3f );
+    }
+
+
+
+
     @Test
     public void testAccount(){
         Account acc = new Account("123434", 0f, 3f);

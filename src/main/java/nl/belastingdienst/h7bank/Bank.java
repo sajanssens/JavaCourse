@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Bank {
 
+    //       type of key, type of content
     private Map<String, Account> accounts = new HashMap<String,Account>();
     // HashMap is child of Map!!
 
