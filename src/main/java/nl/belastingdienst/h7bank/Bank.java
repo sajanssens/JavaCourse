@@ -27,15 +27,14 @@ public class Bank {
      */
     public boolean transfer(String fromBankNr, String toBankNr, float amount){
 
-        Account accountFrom = accounts.get(fromBankNr);
-
-        // assume the worst
+       // assume the worst
         boolean succeeded = false;
 
-        if(!accountFrom.equals(null)){
+        Account accountFrom = accounts.get(fromBankNr);
+        if(!(accountFrom ==  null)){
             // source account exists
             Account accountTo = accounts.get(toBankNr);
-            if(!accountTo.equals(null)) {
+            if(!(accountTo == null)) {
                 // target account exists
                 if(accountFrom.withdraw(amount)){
                     // enough balance! Let's move the money
@@ -65,7 +64,7 @@ public class Bank {
             System.out.printf("\nBankNr: %s",account.getBankNr());
             System.out.printf("\nBalance: %s",account.getBalance());
             System.out.printf("\nInterestRate: %s",account.getInterestRate());
-            System.out.printf("\nInterest Amount: %s",account.calcInterest());
+
         }
         else{
             System.out.printf("\nAccount %s does not exist", bankNr);
@@ -98,13 +97,17 @@ public class Bank {
     /**
      * Show list of accounts with interest amount
      */
-    public void showInterests(){
+    public void showInterests(int years){
 
         System.out.println("\n-------------------");
         // although keyword is 'for', this is called 'foreach'
         for (Map.Entry<String, Account> account : this.accounts.entrySet()) {
-            System.out.printf("\nAccount %s, rate %.2f, amount %.2f", account.getKey(), account.getValue().getInterestRate(), account.getValue().calcInterest() );
+            System.out.printf("\nAccount %s, rate %.2f, amount %.2f", account.getKey(), account.getValue().getInterestRate(), account.getValue().calcInterest(years) );
         }
+    }
+
+    public  Map<String, Account> getAccounts(){
+        return this.accounts;
     }
 
 }

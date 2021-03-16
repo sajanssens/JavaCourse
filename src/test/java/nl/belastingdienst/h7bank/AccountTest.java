@@ -9,78 +9,70 @@ public class AccountTest {
     public void whenDepositBalanceIncreases(){
         Account acc = new Account("123456", 100f, 3f);
         acc.deposit(100);
-        Assert.assertTrue(acc.getBalance() == 200  );
+        Assert.assertEquals(200, acc.getBalance(), 0.0);
     }
 
     @Test
     public void whenWithDrawBalanceDecreases(){
         Account acc = new Account("123456", 100f, 3f);
-        acc.withdraw(30);
-        Assert.assertTrue(acc.getBalance() == 70 );
+        boolean succeeded = acc.withdraw(30);
+        Assert.assertTrue(succeeded);
+        Assert.assertEquals(70, acc.getBalance(), 0.0);
     }
 
     @Test
-    public void whenCalcInterest(){
-        Account acc = new Account("123456", 100f, 3f);
-        float interest = acc.calcInterest();
-        Assert.assertTrue(interest == 3f );
+    public void whenInterestCalculatedFor5YearsResultmustBeCorrect(){
+        Account acc = new Account("123456", 1000f, 10f);
+        Assert.assertEquals(1500f, acc.calcInterest(5), 0.0);
     }
 
     @Test
     public void whenGetInterestRate(){
         Account acc = new Account("123456", 100f, 3f);
         float interestRate = acc.getInterestRate();
-        Assert.assertTrue(interestRate == 3f );
+        Assert.assertEquals(3f, interestRate, 0.0);
     }
 
     @Test
     public void whenSetInterestRate(){
         Account acc = new Account("123456", 100f, 3f);
         acc.setInterestRate(4f);
-        Assert.assertTrue(acc.getInterestRate() == 4f );
+        Assert.assertEquals(4f, acc.getInterestRate(), 0.0);
     }
 
     @Test
     public void whenGetBalance(){
         Account acc = new Account("123456", 100f, 3f);
-        float interestRate = acc.getInterestRate();
-        Assert.assertTrue(interestRate == 3f );
+        Assert.assertEquals(100f, acc.getBalance(), 0.0);
     }
-
-
-
 
     @Test
-    public void testAccount(){
-        Account acc = new Account("123434", 0f, 3f);
-        System.out.printf("Initial balance: %.2f", acc.getBalance());
-        acc.deposit(100.45f);
-        System.out.printf("\nCurrent balance: %.2f", acc.getBalance());
+    public void whenSetBalance(){
+        Account acc = new Account("123456", 100f, 3f);
+        acc.setBalance(230f);
+        Assert.assertFalse(acc.getBalance() != 230f);
+    }
 
-        // withdraw
-        float withdrawAmount = 17.55f;
-        boolean success = acc.withdraw(withdrawAmount);
-        System.out.printf("\nWithdrawing: %.2f", withdrawAmount);
-        if(success) {
-            System.out.printf("\nCurrent balance: %.2f", acc.getBalance());
-        }
-        else{
-            System.out.println("\nBalance insufficient");
-        }
+    @Test
+    public void whenGetBankNr(){
+        Account acc = new Account("123456", 100f, 3f);
+        Assert.assertSame("123456", acc.getBankNr());
+    }
 
-        // withdraw too much
-        withdrawAmount = 230.22f;
-        success = acc.withdraw(withdrawAmount);
-        System.out.printf("\nWithdrawing: %.2f", withdrawAmount);
-        if(success) {
-            System.out.printf("\nCurrent balance: %.2f", acc.getBalance());
-        }
-        else{
-            System.out.println("\nBalance insufficient");
-        }
-
-        // calc interest
-        System.out.printf("\nInterest rate %.2f, balance %.2f, interest: %.2f ", acc.getInterestRate(), acc.getBalance(), acc.calcInterest());
+    @Test
+    public void whenSetBankNr(){
+        Account acc = new Account("123456", 100f, 3f);
+        acc.setBankNr("333333");
+        Assert.assertEquals("333333", acc.getBankNr());
 
     }
+
+    @Test
+    public void whenOverDrawAccount(){
+        Account acc = new Account("123456", 100f, 3f);
+        boolean succeeded = acc.withdraw(300f);
+        Assert.assertFalse(succeeded);
+    }
+
+
 }

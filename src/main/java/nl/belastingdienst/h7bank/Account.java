@@ -20,8 +20,11 @@ public class Account {
         this.setBalance(this.getBalance() + amount);
     }
 
-    public float calcInterest(){
-        return this.interestRate * (this.getBalance() / 100);
+    // https://www.calculatorsoup.com/calculators/financial/simple-interest-plus-principal-calculator.php
+    public float calcInterest(int years){
+        float principal = this.balance;
+        float rate = (this.interestRate / 100);
+        return principal * ( 1 + (rate * years));
     }
 
     public Account(String bankNr, float balance, float interestRate){
