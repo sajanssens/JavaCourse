@@ -39,6 +39,7 @@ public class Bank {
                 if(accountFrom.withdraw(amount)){
                     // enough balance! Let's move the money
                     accountTo.deposit(amount);
+                    succeeded = true;
                 }
                 else{
                     System.out.printf("\naccount %s does not have enough balance", fromBankNr);

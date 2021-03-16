@@ -3,6 +3,7 @@ package nl.belastingdienst.h7bank;
 import org.junit.Assert;
 import org.junit.Test;
 
+// @todo add @Before
 public class AccountTest {
 
     @Test
@@ -21,7 +22,7 @@ public class AccountTest {
     }
 
     @Test
-    public void whenInterestCalculatedFor5YearsResultmustBeCorrect(){
+    public void whenInterestCalculatedFor5YearsResultMustBeCorrect(){
         Account acc = new Account("123456", 1000f, 10f);
         Assert.assertEquals(1500f, acc.calcInterest(5), 0.0);
     }

@@ -22,7 +22,7 @@ public class Main {
 
         System.out.printf("\n\nTotal amount in the bank: %.2f ", bank.totalSum() );
 
-        bank.showInterests(1);
+        bank.showInterests(10);
 
     }
 
