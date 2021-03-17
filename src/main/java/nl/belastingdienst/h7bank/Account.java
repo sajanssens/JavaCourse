@@ -7,9 +7,9 @@ public class Account {
     private float interestRate;
 
     public boolean withdraw(float amount ){
-       float newAmount = this.getBalance() - amount;
+       float newAmount = getBalance() - amount;
        if(newAmount >= 0){
-           this.setBalance(newAmount);
+           setBalance(newAmount);
            return true;
        }
        return false;

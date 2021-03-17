@@ -11,7 +11,7 @@ public class Main {
 
             acc.setNumber(dg.getData());
             acc.validate();
-            System.out.println(acc.getStateText());
+            System.out.println(acc.getState().getDescription());
 
         }
 
