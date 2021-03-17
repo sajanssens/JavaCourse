@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DataGetter dg = new DataGetter("Your account number: ");
+        ConsoleDataGetter dg = new ConsoleDataGetter("Your account number: ");
         Account acc = new Account();
 
         while (acc.getState() != AccountState.ok) {

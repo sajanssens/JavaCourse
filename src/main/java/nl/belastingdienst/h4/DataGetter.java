@@ -1,21 +1,14 @@
 package nl.belastingdienst.h4;
 
-import java.util.Scanner;
-
-public class DataGetter {
-
-    private String prompt = "";
-
-    public DataGetter(String prompt){
-        this.prompt = prompt;
-    }
-
-    public String getData(){
-
-        Scanner in = new Scanner(System.in);
-        System.out.println(this.prompt);
-        return in.nextLine();
-
-    }
-
+/*
+ A very simple interface
+ Just to try interfaces in java
+ */
+public interface DataGetter {
+    /**
+     * get data from source
+     *
+     * @return the data
+     */
+    public String getData();
 }
