@@ -11,4 +11,5 @@ public interface DataGetter {
      * @return the data
      */
     public String getData();
+    public boolean validate(String input);
 }
