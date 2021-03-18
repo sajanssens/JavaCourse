@@ -28,30 +28,34 @@ public class Bank {
      */
     public boolean transfer(String fromBankNr, String toBankNr, float amount) {
 
-        // assume the worst
-        boolean succeeded = false;
-
-        Account accountFrom = accounts.get(fromBankNr);
-        if (accountFrom != null) {
-            // source account exists
-            Account accountTo = accounts.get(toBankNr);
-            if (accountTo != null) {
-                // target account exists
-                if (accountFrom.withdraw(amount)) {
-                    // enough balance! Let's move the money
-                    accountTo.deposit(amount);
-                    succeeded = true;
-                } else {
-                    System.out.printf("\naccount %s does not have enough balance", fromBankNr);
-                }
-            } else {
-                System.out.printf("\naccount %s does not exist", toBankNr);
-            }
-        } else {
-            System.out.printf("\naccount %s does not exist", fromBankNr);
+        // do not allow negative amounts
+        if(amount<0){
+            System.out.println("Negative amount not allowed");
+            return false;
         }
 
-        return succeeded;
+        // source account exists?
+        Account accountFrom = accounts.get(fromBankNr);
+        if (accountFrom == null) {
+            System.out.printf("\naccount %s does not exist", fromBankNr);
+            return false;
+        }
+        // target account exists?
+        Account accountTo = accounts.get(toBankNr);
+        if (accountTo == null) {
+           System.out.printf("\naccount %s does not exist", toBankNr);
+            return false;
+        }
+
+        // enough balance on source?
+        if (!accountFrom.withdraw(amount)) {
+            System.out.printf("\naccount %s does not have enough balance", fromBankNr);
+            return false;
+        }
+
+        accountTo.deposit(amount);
+
+        return true;
 
     }
 

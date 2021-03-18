@@ -13,11 +13,11 @@ public class Main {
 
         System.out.println("Valid call");
         int[] x = {1,2,3,4,5};
-        f.showFifthElement(x);
+        f.showFifthElement3(x);
 
         System.out.println("Invalid call");
         int[] y = {1};
-        f.showFifthElement(y);
+        f.showFifthElement3(y);
 
     }
 }
