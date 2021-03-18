@@ -27,9 +27,10 @@ public class Bank {
      * @todo raise exception rather then print a message
      */
     public boolean transfer(String fromBankNr, String toBankNr, float amount) {
+        // ik heb het gevoel dat deze methode wel korter kan.
 
         // do not allow negative amounts
-        if(amount<0){
+        if (amount < 0) {
             System.out.println("Negative amount not allowed");
             return false;
         }
@@ -43,7 +44,7 @@ public class Bank {
         // target account exists?
         Account accountTo = accounts.get(toBankNr);
         if (accountTo == null) {
-           System.out.printf("\naccount %s does not exist", toBankNr);
+            System.out.printf("\naccount %s does not exist", toBankNr);
             return false;
         }
 
@@ -62,7 +63,8 @@ public class Bank {
     // Show data of given account
     public void report(String bankNr) {
         Account account = accounts.get(bankNr);
-        if (!account.equals(null)) {
+        if (!account.equals(null)) { // hier bedoel je denk ik account != null i.p.v. equals
+            // dit kun je ook in een toString van Account zetten
             System.out.println("\n---------------");
             System.out.printf("\nBankNr: %s", account.getBankNr());
             System.out.printf("\nBalance: %s", account.getBalance());

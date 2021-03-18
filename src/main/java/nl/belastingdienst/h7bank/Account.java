@@ -6,28 +6,29 @@ public class Account {
     private float balance;
     private float interestRate;
 
-    public boolean withdraw(float amount ){
-       float newAmount = getBalance() - amount;
-       if(newAmount >= 0){
-           setBalance(newAmount);
-           return true;
-       }
-       return false;
+    public boolean withdraw(float amount) {
+        float newAmount = getBalance() - amount;
+        if (newAmount >= 0) {
+            setBalance(newAmount);
+            return true;
+        }
+        return false;
 
     }
 
-    public void deposit(float amount){
+    public void deposit(float amount) {
         this.setBalance(this.getBalance() + amount);
     }
 
     // https://www.calculatorsoup.com/calculators/financial/simple-interest-plus-principal-calculator.php
-    public float calcInterest(int years){
+    public float calcInterest(int years) {
         float principal = this.balance;
         float rate = (this.interestRate / 100);
-        return principal * ( 1 + (rate * years));
+        return principal * (1 + (rate * years)); // klopt deze berekening wel?
     }
 
-    public Account(String bankNr, float balance, float interestRate){
+    // het is gebruikelijk (maar niet verplicht) om de constructors bovenin de class te definieren
+    public Account(String bankNr, float balance, float interestRate) {
         this.setBankNr(bankNr);
         // todo check positive
         this.setBalance(balance);

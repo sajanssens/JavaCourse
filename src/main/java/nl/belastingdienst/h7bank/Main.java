@@ -1,5 +1,6 @@
 package nl.belastingdienst.h7bank;
 
+// iml file hoort niet in git; toevoegen aan gitignore en dan verwijderen uit je repo.
 public class Main {
 
     public static void main(String[] args) {
