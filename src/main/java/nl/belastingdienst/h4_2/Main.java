@@ -1,6 +1,5 @@
 package nl.belastingdienst.h4_2;
 
-
 import nl.belastingdienst.h4.ConsoleDataGetter;
 
 public class Main {
@@ -12,14 +11,15 @@ public class Main {
 
         String input = dg.getData();
 
+        // Season is a string now, but we need a enum, this is the (a?) way
         Season s = Season.valueOf(input);
 
         switch(s){
-            case Winter :
+            case Winter : // intentionally left out 'break', in effect it becomes an 'OR'
             case Autumn:
                 temperature = "Cold";
                 break;
-            case Spring:
+            case Spring: // intentionally left out 'break', in effect it becomes an 'OR'
             case Summer:
                 temperature = "Warm";
                 break;
