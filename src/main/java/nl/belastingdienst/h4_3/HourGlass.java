@@ -5,8 +5,6 @@ package nl.belastingdienst.h4_3;
  - Constructor override
  - Calling constructor from constructor
  - Converting char to string
- To do:
- -
  */
 public class HourGlass {
     private int width;

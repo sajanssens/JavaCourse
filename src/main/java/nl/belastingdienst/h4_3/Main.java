@@ -18,8 +18,7 @@ public class Main {
             } catch (TooManyErrorsException e) {
                 System.out.println("Too many wrong tries, let's stop");
                 System.out.println(e.getMessage());
-                // Is this bad?
-                System.exit(1);
+                break;
             } catch (NumberFormatException nfe) {
                 System.out.println("Input is not a valid number");
             } catch (Exception e) {
